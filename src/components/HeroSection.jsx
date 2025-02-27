@@ -14,7 +14,7 @@ const HeroSection = () => {
     <section
       className="
         bg-[#FDF3ED]
-        pt-4
+        pt-4 pb-8
         sm:pt-12
         md:pt-20
         lg:pt-28
@@ -43,10 +43,7 @@ const HeroSection = () => {
             mx-0
             transform
             transition-opacity duration-1000
-
-            // Centraliza no mobile, alinha à esquerda em sm+
             text-center sm:text-left
-
             ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
           `}
         >
@@ -62,8 +59,7 @@ const HeroSection = () => {
           </h1>
 
           <p className="font-normal text-base sm:text-lg lg:text-2xl text-[#222222] mt-6">
-            Impulsione sua marca com websites rápidos,
-            eficazes e alinhados ao seu branding.
+            Impulsione sua marca com websites rápidos, eficazes e alinhados ao seu branding.
           </p>
 
           {/* BOTOES: centralizados no mobile, esquerda em sm+ */}
@@ -107,7 +103,6 @@ const HeroSection = () => {
             >
               Saiba Mais
             </Button>
-
 
             {/* BOTÃO "FALE CONOSCO" - MAIOR TAMBÉM */}
             
