@@ -48,56 +48,71 @@ const ComparisonTable = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        {/* h2 unificado */}
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl  mb-4">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl mb-4">
           Escolher nossos serviços significa garantir uma presença digital sólida, confiável e profissional.
         </h2>
       </motion.div>
       <motion.div
-        className="overflow-x-auto w-full"
+        className="overflow-hidden w-full"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
       >
-        <table className="table-auto border-collapse w-full max-w-[1280px] mx-auto bg-gradient-to-br from-[#EAF6FF] to-[#ffffff] rounded-[3rem] shadow-3xl">
-          <thead>
-            <tr className="bg-[#EAF6FF] h-28">
-              {/* th unificados */}
-              <th className="px-6 py-6 text-left font-bold text-xl sm:text-2xl lg:text-3xl text-gray-800">
-                &nbsp;
-              </th>
-              <th className="px-6 py-6 text-center font-bold text-xl sm:text-2xl lg:text-3xl text-orange-600">
-                BRS Digital
-              </th>
-              <th className="px-6 py-6 text-center font-bold text-xl sm:text-2xl lg:text-3xl text-gray-600">
-                Outros
-              </th>
-            </tr>
-          </thead>
-          <tbody className="text-base sm:text-lg lg:text-xl">
-            {[
-              { service: "Identidade visual personalizada", brs: true, outros: false },
-              { service: "Desenvolvimento de código sob medida", brs: true, outros: false },
-              { service: "Site online 24h sem custos adicionais", brs: true, outros: false },
-              { service: "Suporte 24/7", brs: true, outros: false },
-              { service: "Infraestrutura auto-hospedada", brs: true, outros: false },
-            ].map((row, index) => (
-              <motion.tr
-                key={index}
-                className="hover:bg-gray-100 transition-colors duration-300"
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 + index * 0.1, ease: "easeOut" }}
-              >
-                <td className="px-6 py-5 border-b text-left font-medium text-gray-700">
-                  {row.service}
-                </td>
-                <td className="px-6 py-5 border-b text-center bg-green-50">{renderIcon(row.brs, true)}</td>
-                <td className="px-6 py-5 border-b text-center">{renderIcon(row.outros, false)}</td>
-              </motion.tr>
-            ))}
-          </tbody>
-        </table>
+        {/* Container responsivo com zoom out aplicado via media query */}
+        <div className="responsive-table-container">
+          <table className="table-auto border-collapse w-full max-w-[1280px] mx-auto bg-gradient-to-br from-[#EAF6FF] to-[#ffffff] rounded-[3rem] shadow-3xl">
+            <thead>
+              <tr className="bg-[#EAF6FF] h-28">
+                <th className="px-6 py-6 text-left font-bold text-xl sm:text-2xl lg:text-3xl text-gray-800">
+                  &nbsp;
+                </th>
+                <th className="px-6 py-6 text-center font-bold text-xl sm:text-2xl lg:text-3xl text-orange-600">
+                  BRS Digital
+                </th>
+                <th className="px-6 py-6 text-center font-bold text-xl sm:text-2xl lg:text-3xl text-gray-600">
+                  Outros
+                </th>
+              </tr>
+            </thead>
+            <tbody className="text-base sm:text-lg lg:text-xl">
+              {[
+                { service: "Identidade visual personalizada", brs: true, outros: false },
+                { service: "Desenvolvimento de código sob medida", brs: true, outros: false },
+                { service: "Site online 24h sem custos adicionais", brs: true, outros: false },
+                { service: "Suporte 24/7", brs: true, outros: false },
+                { service: "Infraestrutura auto-hospedada", brs: true, outros: false },
+              ].map((row, index) => (
+                <motion.tr
+                  key={index}
+                  className="hover:bg-gray-100 transition-colors duration-300"
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 + index * 0.1, ease: "easeOut" }}
+                >
+                  <td className="px-6 py-5 border-b text-left font-medium text-gray-700">
+                    {row.service}
+                  </td>
+                  <td className="px-6 py-5 border-b text-center bg-green-50">
+                    {renderIcon(row.brs, true)}
+                  </td>
+                  <td className="px-6 py-5 border-b text-center">
+                    {renderIcon(row.outros, false)}
+                  </td>
+                </motion.tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        {/* Bloco de estilo embutido */}
+        <style jsx>{`
+          @media (max-width: 640px) {
+            .responsive-table-container {
+              transform: scale(0.7);
+              transform-origin: top left;
+              width: calc(100% / 0.7);
+            }
+          }
+        `}</style>
       </motion.div>
       <motion.div
         className="text-center mt-6"
@@ -105,10 +120,11 @@ const ComparisonTable = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
       >
-        {/* p unificado */}
         <p className="text-base sm:text-lg lg:text-xl text-gray-700">
           Não perca mais tempo e construa sua presença conosco.{" "}
-          <a href="#" className="text-orange-500 underline">Fale agora com um especialista</a>
+          <a href="#" className="text-orange-500 underline">
+            Fale agora com um especialista
+          </a>
         </p>
       </motion.div>
     </section>
