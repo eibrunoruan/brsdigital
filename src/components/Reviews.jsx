@@ -103,8 +103,8 @@ const Reviews = () => {
                 className="w-12 h-12 rounded-full object-cover mr-4"
               />
               <div className="text-left">
-                <p className="font-bold">Carlos Barney</p>
-                <p className="text-sm text-gray-500">Diretor @MyIDO</p>
+                <p className="font-bold">Willyan Feiller</p>
+                <p className="text-sm text-gray-500">CEO @SAAS-Idol</p>
               </div>
             </div>
           </motion.div>
