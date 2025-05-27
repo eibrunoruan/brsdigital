@@ -8,8 +8,8 @@ const ApenasUmTeste = () => {
   // Array de projetos com imagem, título e descrição
   const projects = [
     { src: imagem1, title: "Creative Studios", description: "Estúdio de animação." },
-    { src: imagem2, title: "MangaPrE", description: "Site de reviews de cultura Geek." },
-    { src: imagem3, title: "MyIDO", description: "Micro-serviço de criação de página para casais." },
+    { src: imagem2, title: "MangaPre", description: "Site de reviews de cultura Geek." },
+    { src: imagem3, title: "SAAS-Idol", description: "Micro-serviço de criação de página para idolos." },
   ];
 
   // Duplicando os projetos para efeito de scroll infinito
